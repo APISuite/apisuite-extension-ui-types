@@ -39,7 +39,7 @@ export declare type PageEntry = {
 export declare type MenuEntry = {
     label: string;
     route: string;
-    title: string;
+    title?: string;
 };
 /**
  * Returns all pages provided by the extension to the APISuite
