@@ -10,9 +10,9 @@ You can also refer to the [Example UI Extension](https://github.com/Cloudoki/api
 
 ## Using the library
 
-To install this library, run the following:
+To install this library, run the following adapting the version you want:
 
-    npm install --save-dev Cloudoki/apisuite-extension-ui-types
+    npm install --save-dev Cloudoki/apisuite-extension-ui-types#v1.0.2
 
 You can then import the type definitions you need in your project:
 
@@ -49,6 +49,10 @@ For instance, to create a patch release, run:
     npm version patch
 
 This will build the project, increment the version's patch field, commit these new changes and tag the commit.
+
+Then, don't forget the push the repo and the tags:
+
+    git push && git push origin --tags
 
 ### Generate documentation
 
