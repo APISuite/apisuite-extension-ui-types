@@ -45,7 +45,7 @@ export type PageEntry = {
 export type MenuEntry = {
   label: string
   route: string
-  title: string
+  title?: string
 }
 
 /**
@@ -133,13 +133,13 @@ export abstract class Extension {
    * The name of the extension
    */
   get name(): string {
-    return (<typeof Extension>this.constructor).info.name
+    return (this.constructor as typeof Extension).info.name
   }
 
   /**
    * The version of the extension
    */
   get version(): string {
-    return (<typeof Extension>this.constructor).info.version
+    return (this.constructor as typeof Extension).info.version
   }
 }
