@@ -2767,8 +2767,8 @@ img {
 			<a href="#using-the-library" id="using-the-library" style="color: inherit; text-decoration: none;">
 				<h2>Using the library</h2>
 			</a>
-			<p>To install this library, run the following:</p>
-			<pre><code>npm install --<span class="hljs-built_in">save</span>-<span class="hljs-built_in">dev</span> Cloudoki/apisuite-extension-ui-types</code></pre>
+			<p>To install this library, run the following adapting the version you want:</p>
+			<pre><code><span class="hljs-attribute">npm</span> install --save-dev Cloudoki/apisuite-extension-ui-types#v<span class="hljs-number">1</span>.<span class="hljs-number">0</span>.<span class="hljs-number">2</span></code></pre>
 			<p>You can then import the type definitions you need in your project:</p>
 			<pre><code class="language-javascript"><span class="hljs-keyword">import</span> { Extension, Hooks, MenuEntry } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;apisuite-extension-ui-types&quot;</span>;
 
@@ -2783,6 +2783,25 @@ img {
 			</a>
 			<p>If you&#39;re working on the library itself you can install it in other projects locally with the following command:</p>
 			<pre><code>npm install /<span class="hljs-keyword">local</span>/<span class="hljs-type">path</span>/<span class="hljs-keyword">to</span>/apisuite-<span class="hljs-keyword">extension</span>-ui-<span class="hljs-keyword">types</span></code></pre>
+			<a href="#build" id="build" style="color: inherit; text-decoration: none;">
+				<h3>Build</h3>
+			</a>
+			<p>To build the project run:</p>
+			<pre><code>npm <span class="hljs-keyword">run</span><span class="bash"> build</span></code></pre>
+			<p>This will create the bundled project in the <code>dist/</code> folder. This folder is versioned as well because we currently install this project in other folders using npm&#39;s GitHub repo references as demonstrated above.</p>
+			<a href="#release-a-new-version" id="release-a-new-version" style="color: inherit; text-decoration: none;">
+				<h3>Release a new version</h3>
+			</a>
+			<p>To release a new version use <a href="https://docs.npmjs.com/cli/version">npm&#39;s version command</a>.</p>
+			<p>For instance, to create a patch release, run:</p>
+			<pre><code>npm <span class="hljs-keyword">version</span> <span class="hljs-keyword">patch</span></code></pre>
+			<p>This will build the project, increment the version&#39;s patch field, commit these new changes and tag the commit.</p>
+			<p>Then, don&#39;t forget the push the repo and the tags:</p>
+			<pre><code>git <span class="hljs-built_in">push</span> &amp;&amp; git <span class="hljs-built_in">push</span> <span class="hljs-built_in">origin</span> --tags</code></pre>
+			<a href="#generate-documentation" id="generate-documentation" style="color: inherit; text-decoration: none;">
+				<h3>Generate documentation</h3>
+			</a>
+			<p>When you build the project (using <code>npm run build</code>), it also generates <a href="https://typedoc.org/">TypeDoc</a> documentation in the <code>docs/</code> folder. The idea would be to have that documentation served using GitHub Pages but it&#39;s not possible to have private GitHub Pages. So, you can simply generate the docs and view them locally using your browser, for now.</p>
 			<a href="#npm-scripts" id="npm-scripts" style="color: inherit; text-decoration: none;">
 				<h3>NPM scripts</h3>
 			</a>
@@ -2792,6 +2811,7 @@ img {
 				<li><code>npm run test:watch</code>: Run test suite in <a href="http://facebook.github.io/jest/docs/cli.html#watch">interactive watch mode</a></li>
 				<li><code>npm run test:prod</code>: Run linting and generate coverage</li>
 				<li><code>npm run build</code>: Generate bundles and typings, create docs</li>
+				<li><code>npm run deploy-docs</code>: Generate docs and push them to the <code>docs</code> branch.</li>
 				<li><code>npm run lint</code>: Lints code</li>
 				<li><code>npm run commit</code>: Commit using conventional commit style (<a href="https://github.com/typicode/husky">husky</a> will tell you to use it if you haven&#39;t :wink:)</li>
 			</ul>
@@ -2845,7 +2865,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">Extension<wbr>Config<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{}</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/Cloudoki/apisuite-extension-ui-types/blob/8c073bb/src/index.ts#L81">index.ts:81</a></li>
+						<li>Defined in <a href="https://github.com/Cloudoki/apisuite-extension-ui-types/blob/8ca6b59/src/index.ts#L81">index.ts:81</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -2865,7 +2885,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">Hook<wbr>Menu<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>menu<span class="tsd-signature-symbol">: </span><a href="enums/menus.html" class="tsd-signature-type">Menus</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><a href="globals.html#menuentry" class="tsd-signature-type">MenuEntry</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/Cloudoki/apisuite-extension-ui-types/blob/8c073bb/src/index.ts#L61">index.ts:61</a></li>
+						<li>Defined in <a href="https://github.com/Cloudoki/apisuite-extension-ui-types/blob/8ca6b59/src/index.ts#L61">index.ts:61</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -2902,7 +2922,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">Hook<wbr>Pages<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><a href="globals.html#pageentry" class="tsd-signature-type">PageEntry</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/Cloudoki/apisuite-extension-ui-types/blob/8c073bb/src/index.ts#L55">index.ts:55</a></li>
+						<li>Defined in <a href="https://github.com/Cloudoki/apisuite-extension-ui-types/blob/8ca6b59/src/index.ts#L55">index.ts:55</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -2933,7 +2953,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">Hook<wbr>Sections<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>section<span class="tsd-signature-symbol">: </span><a href="enums/sections.html" class="tsd-signature-type">Sections</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, props<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/Cloudoki/apisuite-extension-ui-types/blob/8c073bb/src/index.ts#L67">index.ts:67</a></li>
+						<li>Defined in <a href="https://github.com/Cloudoki/apisuite-extension-ui-types/blob/8ca6b59/src/index.ts#L67">index.ts:67</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -2973,7 +2993,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">Hooks<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>menu<span class="tsd-signature-symbol">: </span><a href="globals.html#hookmenu" class="tsd-signature-type">HookMenu</a><span class="tsd-signature-symbol">; </span>pages<span class="tsd-signature-symbol">: </span><a href="globals.html#hookpages" class="tsd-signature-type">HookPages</a><span class="tsd-signature-symbol">; </span>sections<span class="tsd-signature-symbol">: </span><a href="globals.html#hooksections" class="tsd-signature-type">HookSections</a><span class="tsd-signature-symbol"> }</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/Cloudoki/apisuite-extension-ui-types/blob/8c073bb/src/index.ts#L72">index.ts:72</a></li>
+						<li>Defined in <a href="https://github.com/Cloudoki/apisuite-extension-ui-types/blob/8ca6b59/src/index.ts#L72">index.ts:72</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -2999,10 +3019,10 @@ img {
 			<section class="tsd-panel tsd-member tsd-kind-type-alias">
 				<a name="menuentry" class="tsd-anchor"></a>
 				<h3>Menu<wbr>Entry</h3>
-				<div class="tsd-signature tsd-kind-icon">Menu<wbr>Entry<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>label<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>route<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>title<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></div>
+				<div class="tsd-signature tsd-kind-icon">Menu<wbr>Entry<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>label<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>route<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>title<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/Cloudoki/apisuite-extension-ui-types/blob/8c073bb/src/index.ts#L45">index.ts:45</a></li>
+						<li>Defined in <a href="https://github.com/Cloudoki/apisuite-extension-ui-types/blob/8ca6b59/src/index.ts#L45">index.ts:45</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -3020,7 +3040,7 @@ img {
 							<h5>route<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
 						</li>
 						<li class="tsd-parameter">
-							<h5>title<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							<h5><span class="tsd-flag ts-flagOptional">Optional</span> title<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
 						</li>
 					</ul>
 				</div>
@@ -3031,7 +3051,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">Page<wbr>Entry<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>auth<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol">; </span>component<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>exact<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/Cloudoki/apisuite-extension-ui-types/blob/8c073bb/src/index.ts#L35">index.ts:35</a></li>
+						<li>Defined in <a href="https://github.com/Cloudoki/apisuite-extension-ui-types/blob/8ca6b59/src/index.ts#L35">index.ts:35</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
