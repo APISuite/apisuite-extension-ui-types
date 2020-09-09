@@ -24,6 +24,10 @@ class MyExtension extends Extension {
 }
 ```
 
+## Documentation
+
+To learn how to use the library and read the types documentation, refer to the public documentation page: https://cloudoki.github.io/apisuite-extension-ui-types/
+
 ## Developing the library
 
 ### Local install
@@ -56,7 +60,11 @@ Then, don't forget the push the repo and the tags:
 
 ### Generate documentation
 
-When you build the project (using `npm run build`), it also generates [TypeDoc](https://typedoc.org/) documentation in the `docs/` folder. The idea would be to have that documentation served using GitHub Pages but it's not possible to have private GitHub Pages. So, you can simply generate the docs and view them locally using your browser, for now.
+When you build the project (using `npm run build`), it also generates [TypeDoc](https://typedoc.org/) documentation in the `docs/` folder. This allows us to have that documentation served using GitHub Pages.
+
+To publish the updated documentation to GitHub Pages, run
+
+    npm run deploy-docs
 
 ### NPM scripts
 
