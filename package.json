@@ -1,6 +1,6 @@
 {
   "name": "apisuite-extension-ui-types",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "keywords": [],
   "main": "dist/apisuite-extension-ui-types.umd.js",
