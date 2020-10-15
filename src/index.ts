@@ -19,6 +19,8 @@ export enum Menus {
   FooterStatus = 'FOOTER_STATUS'
 }
 
+export type RoleRequirement = string | string[] | undefined
+
 /**
  * A `Section` is an area/section/place anywhere in the portal.
  *
@@ -37,6 +39,7 @@ export type PageEntry = {
   path: string
   exact: boolean
   component: any // TODO React component
+  role?: RoleRequirement
 }
 
 /**
@@ -46,6 +49,7 @@ export type MenuEntry = {
   label: string
   route: string
   title?: string
+  role?: RoleRequirement
 }
 
 /**
@@ -113,13 +117,16 @@ export type ExtensionConfig = {}
 export abstract class Extension {
   public hooks: Hooks
   public config: {}
+  public core: {}
 
   static info: {
     name: string
     version: string
   }
 
-  constructor(config?: ExtensionConfig | undefined) {
+  constructor(core: any, config?: ExtensionConfig) {
+    this.core = core;
+
     this.config = config || {}
 
     this.hooks = {
