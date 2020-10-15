@@ -15,6 +15,7 @@ export declare enum Menus {
     FooterSupport = "FOOTER_SUPPORT",
     FooterStatus = "FOOTER_STATUS"
 }
+export declare type RoleRequirement = string | string[] | undefined;
 /**
  * A `Section` is an area/section/place anywhere in the portal.
  *
@@ -32,6 +33,7 @@ export declare type PageEntry = {
     path: string;
     exact: boolean;
     component: any;
+    role?: RoleRequirement;
 };
 /**
  * An menu entry that will usually be a link to another page.
@@ -40,6 +42,7 @@ export declare type MenuEntry = {
     label: string;
     route: string;
     title?: string;
+    role?: RoleRequirement;
 };
 /**
  * Returns all pages provided by the extension to the APISuite
@@ -101,11 +104,12 @@ export declare type ExtensionConfig = {};
 export declare abstract class Extension {
     hooks: Hooks;
     config: {};
+    core: {};
     static info: {
         name: string;
         version: string;
     };
-    constructor(config?: ExtensionConfig | undefined);
+    constructor(core: any, config?: ExtensionConfig);
     /**
      * The name of the extension
      */

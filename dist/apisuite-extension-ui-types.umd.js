@@ -58,7 +58,8 @@
    * ```
    */
   var Extension = /** @class */ (function () {
-      function Extension(config) {
+      function Extension(core, config) {
+          this.core = core;
           this.config = config || {};
           this.hooks = {
               menu: function () { return null; },
