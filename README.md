@@ -56,7 +56,7 @@ This will build the project, increment the version's patch field, commit these n
 
 Then, to publish the package to the npm registry, run:
 
-    npm publish
+    npm run dist
 
 ### Generate documentation
 
