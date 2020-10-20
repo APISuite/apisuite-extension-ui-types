@@ -1,14 +1,12 @@
 {
-  "name": "apisuite-extension-ui-types",
-  "version": "1.0.3",
+  "name": "@apisuite/extension-ui-types",
+  "version": "1.0.0-beta.1",
   "description": "",
   "keywords": [],
-  "main": "dist/apisuite-extension-ui-types.umd.js",
-  "module": "dist/apisuite-extension-ui-types.es5.js",
-  "types": "dist/types/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "private": true,
+  "main": "./apisuite-extension-ui-types.umd.js",
+  "module": "./apisuite-extension-ui-types.es5.js",
+  "types": "./index.d.ts",
   "author": "Tiago Alves <tiagoadalves@gmail.com>",
   "repository": {
     "type": "git",
@@ -20,9 +18,12 @@
   },
   "scripts": {
     "lint": "tslint  --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
+    "copyDistFiles": "cat package.json | grep -v \"\\\"private\\\": true\" | grep -v \"\\\"prepublish\\\":\" > dist/package.json && cp -f README.md dist",
     "prebuild": "rimraf dist",
-    "build": "tsc --module commonjs && rollup -c rollup.config.ts && typedoc --out docs --disableOutputCheck --target es6 --theme minimal --mode file src",
+    "build": "tsc --module commonjs && rollup -c rollup.config.ts && typedoc --out docs --disableOutputCheck --target es6 --theme minimal --mode file src && npm run copyDistFiles",
     "version": "npm run build",
+    "prepublish": "echo \"Error: Don't run 'npm publish' in root. Use 'npm run dist' instead.\" && exit 1",
+    "dist": "cd dist && npm publish --access public",
     "start": "rollup -c rollup.config.ts -w",
     "test": "jest --coverage",
     "test:watch": "jest --coverage --watch",
