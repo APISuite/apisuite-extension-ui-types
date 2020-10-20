@@ -12,7 +12,7 @@ export * from '..'
  * Example usage:
  *
  * ```typescript
- * import { Extension } from "apisuite-extension-ui-types";
+ * import { Extension } from "@apisuite/extension-ui-types/v1";
  * import hooks from "./hooks";
  * import configHelper from "./helpers/config";
  * import { name, version } from "../package.json";
@@ -21,12 +21,13 @@ export * from '..'
  *   static info = {
  *     name,
  *     version,
+ *     protocolVersion: '1',
  *   };
  *
  *   hooks = hooks;
  *
- *   constructor(config?: {}) {
- *     super(config);
+ *   constructor({ core, config }: MyExtensionParameters) {
+ *     super({ core, config });
  *     configHelper.set(config);
  *   }
  * }

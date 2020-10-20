@@ -4,10 +4,10 @@
   "description": "",
   "keywords": [],
   "private": true,
-  "main": "./apisuite-extension-ui-types.umd.js",
-  "module": "./apisuite-extension-ui-types.es5.js",
-  "types": "./index.d.ts",
-  "author": "Tiago Alves <tiagoadalves@gmail.com>",
+  "main": "apisuite-extension-ui-types.umd.js",
+  "module": "apisuite-extension-ui-types.es5.js",
+  "types": "index.d.ts",
+  "author": "Tiago Alves <tiagoalves@cloudoki.com>",
   "repository": {
     "type": "git",
     "url": "https://github.com/Cloudoki/apisuite-extension-ui-types.git"
@@ -30,9 +30,6 @@
     "test:prod": "npm run lint && npm run test -- --no-cache",
     "deploy-docs": "rimraf docs && deploy-to-git",
     "report-coverage": "cat ./coverage/lcov.info | coveralls",
-    "commit": "git-cz",
-    "semantic-release": "semantic-release",
-    "semantic-release-prepare": "ts-node tools/semantic-release-prepare",
     "precommit": "lint-staged"
   },
   "lint-staged": {

@@ -12,12 +12,12 @@ You can also refer to the [Example UI Extension](https://github.com/Cloudoki/api
 
 To install this library, run the following adapting the version you want:
 
-    npm install --save-dev Cloudoki/apisuite-extension-ui-types#v1.0.2
+    npm install --save-dev @apisuite/extension-ui-types
 
 You can then import the type definitions you need in your project:
 
 ```javascript
-import { Extension, Hooks, MenuEntry } from "apisuite-extension-ui-types";
+import { Extension, Hooks, MenuEntry } from "@apisuite/extension-ui-types/v1";
 
 class MyExtension extends Extension {
   // ...
@@ -34,7 +34,7 @@ To learn how to use the library and read the types documentation, refer to the p
 
 If you're working on the library itself you can install it in other projects locally with the following command:
 
-    npm install /local/path/to/apisuite-extension-ui-types
+    npm install /local/path/to/apisuite-extension-ui-types/dist
 
 ### Build
 
@@ -42,7 +42,7 @@ To build the project run:
 
     npm run build
 
-This will create the bundled project in the `dist/` folder. This folder is versioned as well because we currently install this project in other folders using npm's GitHub repo references as demonstrated above.
+This will create the bundled project in the `dist/` folder.
 
 ### Release a new version
 
@@ -54,9 +54,9 @@ For instance, to create a patch release, run:
 
 This will build the project, increment the version's patch field, commit these new changes and tag the commit.
 
-Then, don't forget the push the repo and the tags:
+Then, to publish the package to the npm registry, run:
 
-    git push && git push origin --tags
+    npm publish
 
 ### Generate documentation
 
@@ -76,13 +76,3 @@ To publish the updated documentation to GitHub Pages, run
  - `npm run deploy-docs`: Generate docs and push them to the `docs` branch.
  - `npm run lint`: Lints code
  - `npm run commit`: Commit using conventional commit style ([husky](https://github.com/typicode/husky) will tell you to use it if you haven't :wink:)
-
-### Excluding peerDependencies
-
-On library development, one might want to set some peer dependencies, and thus remove those from the final bundle. You can see in [Rollup docs](https://rollupjs.org/#peer-dependencies) how to do that.
-
-Good news: the setup is here for you, you must only include the dependency name in `external` property within `rollup.config.js`. For example, if you want to exclude `lodash`, just write there `external: ['lodash']`.
-
-# Acknowledgements
-
-Library based on the [TypeScript library starter](https://github.com/alexjoverm/typescript-library-starter).
