@@ -1,4 +1,12 @@
 /**
+ * The base layouts APISuite supports.
+ */
+export enum Layouts {
+  Main = 'MAIN',
+  Essential = 'ESSENTIAL',
+}
+
+/**
  * The different (sub)menus that the APISuite provides.
  */
 export enum Menus {
@@ -38,8 +46,10 @@ export type PageEntry = {
   auth?: boolean
   path: string
   exact: boolean
+  layout?: Layouts | string,
+  layoutProps?: object,
   component: any // TODO React component
-  role?: RoleRequirement
+  role?: RoleRequirement,
 }
 
 /**
