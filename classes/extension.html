@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Extension | apisuite-extension-ui-types</title>
-	<meta name="description" content="Documentation for apisuite-extension-ui-types">
+	<title>Extension | @apisuite/extension-ui-types</title>
+	<meta name="description" content="Documentation for @apisuite/extension-ui-types">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style type="text/css">/*! normalize.css v1.1.3 | MIT License | git.io/normalize */
 /* ==========================================================================
@@ -2692,7 +2692,7 @@ img {
 		<div class="container">
 			<div class="table-wrap">
 				<div class="table-cell">
-					<strong><a href="../index.html">apisuite-extension-ui-types</a></strong>
+					<strong><a href="../index.html">@apisuite/extension-ui-types</a></strong>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -2723,6 +2723,9 @@ img {
 <nav class="tsd-navigation secondary">
 	<ul>
 		<li class=" tsd-kind-enum">
+			<a href="../enums/layouts.html" class="tsd-kind-icon">Layouts</a>
+		</li>
+		<li class=" tsd-kind-enum">
 			<a href="../enums/menus.html" class="tsd-kind-icon">Menus</a>
 		</li>
 		<li class=" tsd-kind-enum">
@@ -2738,6 +2741,9 @@ img {
 					<a href="extension.html#config" class="tsd-kind-icon">config</a>
 				</li>
 				<li class=" tsd-kind-property tsd-parent-kind-class">
+					<a href="extension.html#core" class="tsd-kind-icon">core</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-class">
 					<a href="extension.html#hooks" class="tsd-kind-icon">hooks</a>
 				</li>
 				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
@@ -2747,9 +2753,15 @@ img {
 					<a href="extension.html#name-1" class="tsd-kind-icon">name</a>
 				</li>
 				<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+					<a href="extension.html#protocolversion-1" class="tsd-kind-icon">protocol<wbr>Version</a>
+				</li>
+				<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 					<a href="extension.html#version-1" class="tsd-kind-icon">version</a>
 				</li>
 			</ul>
+		</li>
+		<li class=" tsd-kind-interface">
+			<a href="../interfaces/extensionparams.html" class="tsd-kind-icon">Extension<wbr>Params</a>
 		</li>
 		<li class=" tsd-kind-type-alias">
 			<a href="../globals.html#extensionconfig" class="tsd-kind-icon">Extension<wbr>Config</a>
@@ -2772,6 +2784,12 @@ img {
 		<li class=" tsd-kind-type-alias">
 			<a href="../globals.html#pageentry" class="tsd-kind-icon">Page<wbr>Entry</a>
 		</li>
+		<li class=" tsd-kind-type-alias">
+			<a href="../globals.html#rolerequirement" class="tsd-kind-icon">Role<wbr>Requirement</a>
+		</li>
+		<li class=" tsd-kind-variable">
+			<a href="../globals.html#protocolversion" class="tsd-kind-icon">protocol<wbr>Version</a>
+		</li>
 	</ul>
 </nav>
 <div class="container container-main">
@@ -2784,7 +2802,7 @@ img {
 					with any extension.</p>
 				</div>
 				<p>Example usage:</p>
-				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { Extension } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;apisuite-extension-ui-types&quot;</span>;
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { Extension } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@apisuite/extension-ui-types/v1&quot;</span>;
 <span class="hljs-keyword">import</span> hooks <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./hooks&quot;</span>;
 <span class="hljs-keyword">import</span> configHelper <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./helpers/config&quot;</span>;
 <span class="hljs-keyword">import</span> { name, version } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;../package.json&quot;</span>;
@@ -2793,12 +2811,13 @@ img {
   <span class="hljs-keyword">static</span> info = {
     name,
     version,
+    protocolVersion: <span class="hljs-string">&#x27;1&#x27;</span>,
   };
 
   hooks = hooks;
 
-  <span class="hljs-keyword">constructor</span>(<span class="hljs-params">config?: {}</span>) {
-    <span class="hljs-built_in">super</span>(config);
+  <span class="hljs-keyword">constructor</span>(<span class="hljs-params">{ core, config }: MyExtensionParameters</span>) {
+    <span class="hljs-built_in">super</span>({ core, config });
     configHelper.set(config);
   }
 }
@@ -2828,6 +2847,7 @@ img {
 						<h3>Properties</h3>
 						<ul class="tsd-index-list">
 							<li class="tsd-kind-property tsd-parent-kind-class"><a href="extension.html#config" class="tsd-kind-icon">config</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-class"><a href="extension.html#core" class="tsd-kind-icon">core</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-class"><a href="extension.html#hooks" class="tsd-kind-icon">hooks</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="extension.html#info" class="tsd-kind-icon">info</a></li>
 						</ul>
@@ -2836,6 +2856,7 @@ img {
 						<h3>Accessors</h3>
 						<ul class="tsd-index-list">
 							<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="extension.html#name-1" class="tsd-kind-icon">name</a></li>
+							<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="extension.html#protocolversion-1" class="tsd-kind-icon">protocol<wbr>Version</a></li>
 							<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="extension.html#version-1" class="tsd-kind-icon">version</a></li>
 						</ul>
 					</section>
@@ -2848,19 +2869,27 @@ img {
 				<a name="constructor" class="tsd-anchor"></a>
 				<h3>constructor</h3>
 				<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-					<li class="tsd-signature tsd-kind-icon">new <wbr>Extension<span class="tsd-signature-symbol">(</span>config<span class="tsd-signature-symbol">?: </span><a href="../globals.html#extensionconfig" class="tsd-signature-type">ExtensionConfig</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="extension.html" class="tsd-signature-type">Extension</a></li>
+					<li class="tsd-signature tsd-kind-icon">new <wbr>Extension<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../globals.html#extensionconfig" class="tsd-signature-type">ExtensionConfig</a><span class="tsd-signature-symbol">; </span>core<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="extension.html" class="tsd-signature-type">Extension</a></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/Cloudoki/apisuite-extension-ui-types/blob/8ca6b59/src/index.ts#L120">index.ts:120</a></li>
+								<li>Defined in <a href="https://github.com/Cloudoki/apisuite-extension-ui-types/blob/c14fd58/src/v1/index.ts#L47">v1/index.ts:47</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5><span class="tsd-flag ts-flagOptional">Optional</span> config: <a href="../globals.html#extensionconfig" class="tsd-signature-type">ExtensionConfig</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h5>
+								<h5>__namedParameters: <span class="tsd-signature-symbol">{ </span>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../globals.html#extensionconfig" class="tsd-signature-type">ExtensionConfig</a><span class="tsd-signature-symbol">; </span>core<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span></h5>
+								<ul class="tsd-parameters">
+									<li class="tsd-parameter">
+										<h5>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../globals.html#extensionconfig" class="tsd-signature-type">ExtensionConfig</a></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>core<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></h5>
+									</li>
+								</ul>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <a href="extension.html" class="tsd-signature-type">Extension</a></h4>
@@ -2876,7 +2905,22 @@ img {
 				<div class="tsd-signature tsd-kind-icon">config<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{}</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/Cloudoki/apisuite-extension-ui-types/blob/8ca6b59/src/index.ts#L115">index.ts:115</a></li>
+						<li>Defined in <a href="https://github.com/Cloudoki/apisuite-extension-ui-types/blob/c14fd58/src/v1/index.ts#L40">v1/index.ts:40</a></li>
+					</ul>
+				</aside>
+				<div class="tsd-type-declaration">
+					<h4>Type declaration</h4>
+					<ul class="tsd-parameters">
+					</ul>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+				<a name="core" class="tsd-anchor"></a>
+				<h3>core</h3>
+				<div class="tsd-signature tsd-kind-icon">core<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{}</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/Cloudoki/apisuite-extension-ui-types/blob/c14fd58/src/v1/index.ts#L41">v1/index.ts:41</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-type-declaration">
@@ -2891,17 +2935,17 @@ img {
 				<div class="tsd-signature tsd-kind-icon">hooks<span class="tsd-signature-symbol">:</span> <a href="../globals.html#hooks" class="tsd-signature-type">Hooks</a></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/Cloudoki/apisuite-extension-ui-types/blob/8ca6b59/src/index.ts#L114">index.ts:114</a></li>
+						<li>Defined in <a href="https://github.com/Cloudoki/apisuite-extension-ui-types/blob/c14fd58/src/v1/index.ts#L39">v1/index.ts:39</a></li>
 					</ul>
 				</aside>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
 				<a name="info" class="tsd-anchor"></a>
 				<h3><span class="tsd-flag ts-flagStatic">Static</span> info</h3>
-				<div class="tsd-signature tsd-kind-icon">info<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>version<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></div>
+				<div class="tsd-signature tsd-kind-icon">info<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>protocolVersion<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>version<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/Cloudoki/apisuite-extension-ui-types/blob/8ca6b59/src/index.ts#L117">index.ts:117</a></li>
+						<li>Defined in <a href="https://github.com/Cloudoki/apisuite-extension-ui-types/blob/c14fd58/src/v1/index.ts#L43">v1/index.ts:43</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-type-declaration">
@@ -2909,6 +2953,9 @@ img {
 					<ul class="tsd-parameters">
 						<li class="tsd-parameter">
 							<h5>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+						</li>
+						<li class="tsd-parameter">
+							<h5>protocol<wbr>Version<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
 						</li>
 						<li class="tsd-parameter">
 							<h5>version<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
@@ -2929,12 +2976,34 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/Cloudoki/apisuite-extension-ui-types/blob/8ca6b59/src/index.ts#L135">index.ts:135</a></li>
+								<li>Defined in <a href="https://github.com/Cloudoki/apisuite-extension-ui-types/blob/c14fd58/src/v1/index.ts#L64">v1/index.ts:64</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
 								<p>The name of the extension</p>
+							</div>
+						</div>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+				<a name="protocolversion-1" class="tsd-anchor"></a>
+				<h3>protocol<wbr>Version</h3>
+				<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> protocolVersion<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/Cloudoki/apisuite-extension-ui-types/blob/c14fd58/src/v1/index.ts#L78">v1/index.ts:78</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>The version of the extension</p>
 							</div>
 						</div>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -2951,7 +3020,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/Cloudoki/apisuite-extension-ui-types/blob/8ca6b59/src/index.ts#L142">index.ts:142</a></li>
+								<li>Defined in <a href="https://github.com/Cloudoki/apisuite-extension-ui-types/blob/c14fd58/src/v1/index.ts#L71">v1/index.ts:71</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -2971,6 +3040,9 @@ img {
 					<ul class="tsd-legend">
 						<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
 						<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+					</ul>
+					<ul class="tsd-legend">
+						<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
 					</ul>
 					<ul class="tsd-legend">
 						<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
