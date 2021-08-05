@@ -36,6 +36,7 @@ export type RoleRequirement = string | string[] | undefined
  * extensions to inject arbitrary React components.
  */
 export enum Sections {
+  DashboardPostContent = 'DASHBOARD_POST_CONTENT',
   HomepagePrecontent = 'HOMEPAGE_PRECONTENT'
 }
 
